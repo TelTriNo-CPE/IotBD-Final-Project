@@ -1,4 +1,5 @@
 from pyspark.sql import DataFrame
+from pyspark.sql.functions import col
 
 
 def filter_valid_transactions(df: DataFrame) -> DataFrame:
@@ -16,4 +17,9 @@ def filter_valid_transactions(df: DataFrame) -> DataFrame:
     Returns:
         DataFrame with only valid transactions
     """
-    pass
+    return df.filter(
+        (col("amount").isNotNull()) &
+        (col("amount") != "") &
+        (col("date") >= "2016-01-01") &
+        (col("date") <= "2025-12-31")
+    )

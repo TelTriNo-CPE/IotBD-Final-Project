@@ -33,7 +33,7 @@ You will receive three CSV files:
 
 Submit a GitHub repository containing your code and a completed `REPORT_TEMPLATE.md`.
 
----
+----
 
 ## Part 1 — Setup & Data Exploration (10 points)
 

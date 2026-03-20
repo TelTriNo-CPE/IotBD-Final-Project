@@ -1,4 +1,5 @@
 from pyspark.sql import DataFrame
+from pyspark.sql.functions import col, when, abs
 
 
 def categorize_spending(df: DataFrame) -> DataFrame:
@@ -18,7 +19,15 @@ def categorize_spending(df: DataFrame) -> DataFrame:
     Returns:
         DataFrame with an additional 'spending_tier' column
     """
-    pass
+    amount = abs(col("amount").cast("double"))
+
+    return df.withColumn(
+        "spending_tier",
+        when(amount < 10, "micro")
+        .when(amount < 50, "small")
+        .when(amount < 200, "medium")
+        .otherwise("large")
+    )
 
 
 def enrich_with_lookups(
@@ -38,4 +47,6 @@ def enrich_with_lookups(
     Returns:
         Enriched DataFrame with category and merchant info
     """
-    pass
+    return df \
+        .join(df_categories, "category_id", "left") \
+        .join(df_merchants, "merchant_id", "left")
