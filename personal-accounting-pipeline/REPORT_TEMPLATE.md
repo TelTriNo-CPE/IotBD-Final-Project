@@ -1,4 +1,4 @@
-# Midterm Report
+# Final Report
 
 **Student Name:** Natanan Tatanan
 **Student ID:** 650610760
@@ -124,7 +124,7 @@ Currently, the pipeline does not explicitly handle duplicate transactions. To ad
 
 _Hint: Think about RPO (Recovery Point Objective) and RTO (Recovery Time Objective)._
 
-The pipeline stores data in multiple layers (raw, staged, analytics), which provides natural redundancy. Backups can be implemented by periodically copying data to external storage such as cloud storage. The Recovery Point Objective (RPO) depends on the pipeline frequency, while the Recovery Time Objective (RTO) depends on how quickly the pipeline can be rerun.
+The pipeline stores data in multiple layers (raw, staged, analytics), which provides natural redundancy. This follows a medallion architecture (raw, staged, analytics), where each layer serves a specific purpose in improving data quality and usability. Backups can be implemented by periodically copying data to external storage such as cloud storage. The Recovery Point Objective (RPO) depends on the pipeline frequency, while the Recovery Time Objective (RTO) depends on how quickly the pipeline can be rerun.
 
 ---
 
@@ -209,7 +209,7 @@ The increase is not always consistent across categories, as some categories may 
 
 > "Which spending categories are 'needs' vs 'wants'? What percentage of our total spending goes to each?"
 
-Essential categories such as groceries, utilities, and housing account for the largest portion of spending at approximately 49.77%. A significant share, around 43.82%, is spent on wants such as entertainment and dining, indicating a relatively high level of discretionary spending. Savings make up only about 6.42% of total spending, suggesting that there may be room to improve financial planning and increase savings for long-term stability.
+Essential categories such as groceries, utilities, and housing account for the largest portion of spending at approximately 49.77%. A significant share, around 43.82%, is spent on wants such as entertainment and dining, indicating a relatively high level of discretionary spending. Savings make up only about 6.42% of total spending, suggesting that there may be room to improve financial planning and increase savings for long-term stability. This suggests an opportunity to reduce discretionary spending and increase savings.
 
 | Budget Type | Total Spending | Percentage |
 |-------------|---------------|------------|
