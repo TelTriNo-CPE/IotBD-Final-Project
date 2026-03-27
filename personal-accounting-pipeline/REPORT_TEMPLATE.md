@@ -25,7 +25,7 @@ There are 1450421 rows with null or empty amount values.
 
 > What is the date range of the transactions?
 
-The transactions range from 2010-01-01 to 2025-12-31.
+The transactions range from 2010-01-01 to 2025-12-31. However, after applying validation rules, only data from 2016-01-01 to 2025-12-31 is used for analysis.
 The dataset spans multiple years, allowing for long-term trend analysis.
 
 ---
